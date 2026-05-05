@@ -60,12 +60,10 @@ export async function getPosts({
 
   const firebaseIds = new Set(firebasePosts.map((post) => post.id));
 
-  const mergedPosts = [
+  return [
     ...firebasePosts,
     ...demoResults.filter((post) => !firebaseIds.has(post.id)),
   ];
-
-  return mergedPosts;
 }
 
 export async function createPost(data) {
@@ -80,25 +78,68 @@ export async function createPost(data) {
   });
 }
 
-export async function toggleLike(postId, uid) {
-  const likeRef = doc(db, "posts", postId, "likes", uid);
-  const exists = (await getDoc(likeRef)).exists();
+async function ensureDemoPostExists(postId, uid) {
+  const postRef = doc(db, "posts", postId);
+  const postSnap = await getDoc(postRef);
 
-  if (exists) {
-    await deleteDoc(likeRef);
-  } else {
-    await setDoc(likeRef, {
-      uid,
-      createdAt: serverTimestamp(),
-    });
+  if (postSnap.exists()) {
+    return;
   }
 
-  await updateDoc(doc(db, "posts", postId), {
-    likesCount: increment(exists ? -1 : 1),
+  const demoPost = demoPosts.find((post) => post.id === postId);
+
+  if (!demoPost) {
+    return;
+  }
+
+  await setDoc(postRef, {
+    ...demoPost,
+    authorId: uid,
+    originalDemoPost: true,
+    createdAt: serverTimestamp(),
   });
 }
 
+export async function toggleLike(postId, uid) {
+  if (!uid) {
+    throw new Error("You must be logged in to like posts.");
+  }
+
+  await ensureDemoPostExists(postId, uid);
+
+  const postRef = doc(db, "posts", postId);
+  const likeRef = doc(db, "posts", postId, "likes", uid);
+  const likeSnap = await getDoc(likeRef);
+
+  if (likeSnap.exists()) {
+    await deleteDoc(likeRef);
+
+    await updateDoc(postRef, {
+      likesCount: increment(-1),
+    });
+
+    return false;
+  }
+
+  await setDoc(likeRef, {
+    uid,
+    createdAt: serverTimestamp(),
+  });
+
+  await updateDoc(postRef, {
+    likesCount: increment(1),
+  });
+
+  return true;
+}
+
 export async function savePost(postId, uid) {
+  if (!uid) {
+    throw new Error("You must be logged in to save posts.");
+  }
+
+  await ensureDemoPostExists(postId, uid);
+
   await setDoc(doc(db, "posts", postId, "saves", uid), {
     uid,
     createdAt: serverTimestamp(),
@@ -110,6 +151,12 @@ export async function savePost(postId, uid) {
 }
 
 export async function reportPost(post, reporterId, reason) {
+  if (!reporterId) {
+    throw new Error("You must be logged in to report posts.");
+  }
+
+  await ensureDemoPostExists(post.id, reporterId);
+
   await addDoc(collection(db, "reports"), {
     postId: post.id,
     postTitle: post.title,

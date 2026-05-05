@@ -22,6 +22,8 @@ export const topics = [
   "Herbs at Home",
   "Skin Care",
   "Stress Relief",
+  "Herbal Tea",
+  "Natural Recipes",
 ];
 
 export const experts = [
@@ -55,989 +57,391 @@ export const experts = [
   },
 ];
 
-export const demoPosts = [
+const authors = [
   {
-    id: "demo-1",
-    title: "Chamomile & Lemon Balm Nighttime Tea",
-    content:
-      "A gentle evening tea idea made with chamomile and lemon balm. Community knowledge only — not medical advice. Avoid if allergic to related plants or if your clinician advised against herbal teas.",
-    category: "Sleep",
-    tags: ["chamomile", "lemon-balm", "tea", "sleep"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1200&q=80",
     authorName: "Sarah Green",
     authorRole: "member",
     authorVerified: false,
     authorPhoto:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
-    likesCount: 128,
-    commentsCount: 24,
-    savesCount: 16,
-    createdAt: new Date().toISOString(),
+      "https://ui-avatars.com/api/?name=Sarah+Green&background=dcefe3&color=28513f",
   },
   {
-    id: "demo-2",
-    title: "Fresh Ginger Comfort Tea",
-    content:
-      "Slice fresh ginger, steep in hot water, and add lemon if desired. Ginger may interact with blood thinners or surgery plans, so ask a professional first.",
-    category: "Immunity",
-    tags: ["ginger", "tea", "comfort", "winter"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1603431778118-a7d212453cf4?auto=format&fit=crop&w=1200&q=80",
     authorName: "David Herbalist",
     authorRole: "expert",
     authorVerified: true,
     authorPhoto:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80",
-    likesCount: 96,
-    commentsCount: 14,
-    savesCount: 25,
-    createdAt: new Date().toISOString(),
+      "https://ui-avatars.com/api/?name=David+Herbalist&background=cfe8d6&color=28513f",
   },
   {
-    id: "demo-3",
-    title: "Aloe Vera Skin Patch-Test Routine",
-    content:
-      "Aloe is commonly used topically. Always patch test first and stop if irritation appears. This is not a treatment plan for burns, wounds, or skin disease.",
-    category: "Skin Care",
-    tags: ["aloe", "skin", "patch-test"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=80",
     authorName: "Lisa Nguyen",
     authorRole: "expert",
     authorVerified: true,
     authorPhoto:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80",
-    likesCount: 71,
-    commentsCount: 8,
-    savesCount: 12,
-    createdAt: new Date().toISOString(),
+      "https://ui-avatars.com/api/?name=Lisa+Nguyen&background=dcefe3&color=28513f",
   },
   {
-    id: "demo-4",
-    title: "Beginner Kitchen Herb Garden",
-    content:
-      "Grow basil, mint, rosemary, parsley, and thyme in small pots near sunlight. Great starter idea for people who want fresh herbs at home.",
-    category: "Gardening",
-    tags: ["gardening", "mint", "basil", "rosemary"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=80",
     authorName: "Garden Circle",
     authorRole: "member",
     authorVerified: false,
-    authorPhoto: "",
-    likesCount: 62,
-    commentsCount: 9,
-    savesCount: 22,
-    createdAt: new Date().toISOString(),
+    authorPhoto:
+      "https://ui-avatars.com/api/?name=Garden+Circle&background=f4ead7&color=28513f",
   },
   {
-    id: "demo-5",
-    title: "Peppermint Digestive Tea Discussion",
-    content:
-      "Peppermint tea is a popular after-meal drink. People with reflux may not tolerate peppermint well, so listen to your body and consult a professional.",
-    category: "Gut Health",
-    tags: ["peppermint", "digestion", "tea"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=80",
-    authorName: "HerbaCircle Kitchen",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 88,
-    commentsCount: 19,
-    savesCount: 30,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-6",
-    title: "Turmeric Golden Milk Educational Recipe",
-    content:
-      "Warm milk or plant milk with turmeric, cinnamon, and a pinch of black pepper. Turmeric can interact with medications and is not for everyone.",
-    category: "General Wellness",
-    tags: ["turmeric", "golden-milk", "cinnamon"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Anya Patel",
+    authorName: "Safety Desk",
     authorRole: "expert",
     authorVerified: true,
     authorPhoto:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80",
-    likesCount: 145,
-    commentsCount: 31,
-    savesCount: 54,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-7",
-    title: "Rosemary Lemon Water",
-    content:
-      "A simple infused water idea with rosemary sprigs and lemon slices. Keep it as a refreshing drink, not a medical remedy.",
-    category: "Nutrition",
-    tags: ["rosemary", "lemon", "infused-water"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 47,
-    commentsCount: 6,
-    savesCount: 18,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-8",
-    title: "Lavender Calm Sachet",
-    content:
-      "Dried lavender in a small cloth sachet can add a calming scent to a drawer or pillow area. Avoid direct use if fragrance triggers headaches or allergies.",
-    category: "Stress Relief",
-    tags: ["lavender", "aroma", "calm"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Maya Wellness",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 75,
-    commentsCount: 12,
-    savesCount: 26,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-9",
-    title: "Cucumber Mint Hydration Jar",
-    content:
-      "Add cucumber slices and mint leaves to cold water for a fresh drink. Wash herbs well and refrigerate safely.",
-    category: "Nutrition",
-    tags: ["cucumber", "mint", "hydration"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1502741224143-90386d7f8c82?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 63,
-    commentsCount: 7,
-    savesCount: 21,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-10",
-    title: "Elderberry Syrup Safety Conversation",
-    content:
-      "Elderberry recipes are popular, but raw elderberries and parts of the plant can be unsafe. This post is educational only; consult a qualified professional.",
-    category: "Safety Warnings",
-    tags: ["elderberry", "safety", "education"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 122,
-    commentsCount: 28,
-    savesCount: 40,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-11",
-    title: "Honey Lemon Thyme Tea",
-    content:
-      "Steep thyme, add lemon, and sweeten lightly with honey. Do not give honey to children under 1 year old.",
-    category: "Herbal Tea",
-    tags: ["thyme", "honey", "lemon", "tea"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 82,
-    commentsCount: 11,
-    savesCount: 33,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-12",
-    title: "Hibiscus Iced Tea",
-    content:
-      "Hibiscus makes a bright tart tea. It may not be suitable for everyone, including some people on blood pressure medication.",
-    category: "Herbal Tea",
-    tags: ["hibiscus", "iced-tea", "summer"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 103,
-    commentsCount: 18,
-    savesCount: 39,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-13",
-    title: "Fennel Seed After-Meal Tea",
-    content:
-      "Crushed fennel seeds can be steeped as an aromatic after-meal tea. Ask a professional first if pregnant, nursing, or taking medication.",
-    category: "Gut Health",
-    tags: ["fennel", "tea", "gut-health"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Herbal Notes",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 55,
-    commentsCount: 5,
-    savesCount: 17,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-14",
-    title: "Oatmeal Honey Face Mask Discussion",
-    content:
-      "Ground oats and honey are often used in gentle DIY skin routines. Patch test and avoid if you have allergy concerns.",
-    category: "Skin Care",
-    tags: ["oatmeal", "honey", "face-mask"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Skin Garden",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 70,
-    commentsCount: 13,
-    savesCount: 28,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-15",
-    title: "Basil Pesto Garden Bowl",
-    content:
-      "Fresh basil, olive oil, garlic, nuts, and greens can make a bright garden bowl. Check allergies before using nuts.",
-    category: "Nutrition",
-    tags: ["basil", "pesto", "nutrition"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1523986371872-9d3ba2e2a389?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 91,
-    commentsCount: 16,
-    savesCount: 37,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-16",
-    title: "Nettle Tea Education Post",
-    content:
-      "Nettle tea is discussed in many wellness communities. It can interact with medications and is not appropriate for everyone.",
-    category: "Safety Warnings",
-    tags: ["nettle", "safety", "tea"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 77,
-    commentsCount: 14,
-    savesCount: 31,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-17",
-    title: "Cinnamon Apple Herbal Simmer",
-    content:
-      "Simmer apple slices, cinnamon, and orange peel for a cozy kitchen aroma. Do not ingest essential oils.",
-    category: "General Wellness",
-    tags: ["cinnamon", "apple", "aroma"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Cozy Wellness",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 68,
-    commentsCount: 8,
-    savesCount: 25,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-18",
-    title: "Lemon Balm Sun Tea Reminder",
-    content:
-      "Lemon balm tea can be refreshing. Prepare and store safely to avoid bacterial growth, especially with sun tea methods.",
-    category: "Herbal Tea",
-    tags: ["lemon-balm", "tea", "food-safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1523906630133-f6934a1ab2b9?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 54,
-    commentsCount: 6,
-    savesCount: 20,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-19",
-    title: "Parsley Lemon Salad Topper",
-    content:
-      "Chopped parsley, lemon, olive oil, and a pinch of salt can brighten salads. Keep it food-focused and safe.",
-    category: "Nutrition",
-    tags: ["parsley", "lemon", "salad"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 44,
-    commentsCount: 4,
-    savesCount: 13,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-20",
-    title: "Calendula Oil Discussion",
-    content:
-      "Calendula-infused oil is popular for topical routines. Patch test, avoid open wounds, and ask a professional for skin conditions.",
-    category: "Skin Care",
-    tags: ["calendula", "skin", "oil"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Skin Garden",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 79,
-    commentsCount: 12,
-    savesCount: 34,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-21",
-    title: "Sage and Honey Tea Safety Note",
-    content:
-      "Sage tea is aromatic, but sage is not suitable for everyone and should not be overused. Ask a professional if pregnant, nursing, or on medication.",
-    category: "Safety Warnings",
-    tags: ["sage", "tea", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 66,
-    commentsCount: 10,
-    savesCount: 23,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-22",
-    title: "Mint Lime Cooling Drink",
-    content:
-      "Muddle mint with lime and sparkling water for a fresh alcohol-free drink. Great for community recipe sharing.",
-    category: "General Wellness",
-    tags: ["mint", "lime", "drink"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1523371683702-5f30a4a995c3?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 90,
-    commentsCount: 17,
-    savesCount: 38,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-23",
-    title: "Rose Hip Tea",
-    content:
-      "Rose hips are often used for tart herbal tea. Check medication interactions and allergies before adding any herb regularly.",
-    category: "Herbal Tea",
-    tags: ["rosehip", "tea", "vitamin-c"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1519092503391-16a955fda811?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 57,
-    commentsCount: 6,
-    savesCount: 19,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-24",
-    title: "Garlic Herb Soup Base",
-    content:
-      "Garlic, onion, parsley, thyme, and vegetable broth can make a comforting soup base. This is a food recipe, not medical advice.",
-    category: "Nutrition",
-    tags: ["garlic", "soup", "thyme"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 115,
-    commentsCount: 23,
-    savesCount: 52,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-25",
-    title: "Eucalyptus Steam Safety Reminder",
-    content:
-      "Some people use aromatic steam, but eucalyptus oil can be unsafe if misused and should not be swallowed. Keep away from children and pets.",
-    category: "Safety Warnings",
-    tags: ["eucalyptus", "steam", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 132,
-    commentsCount: 29,
-    savesCount: 61,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-26",
-    title: "Dandelion Leaf Salad",
-    content:
-      "Young dandelion greens can be used in salads when correctly identified and safely sourced. Avoid areas treated with chemicals.",
-    category: "Nutrition",
-    tags: ["dandelion", "greens", "salad"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Garden Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 52,
-    commentsCount: 9,
-    savesCount: 18,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-27",
-    title: "Raspberry Leaf Tea Education",
-    content:
-      "Raspberry leaf tea is often discussed in women’s wellness spaces. It is not appropriate for everyone; ask a licensed professional before use.",
-    category: "Safety Warnings",
-    tags: ["raspberry-leaf", "women-wellness", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Anya Patel",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80",
-    likesCount: 81,
-    commentsCount: 15,
-    savesCount: 36,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-28",
-    title: "Oregano Herb Oil Food Use",
-    content:
-      "Fresh oregano in olive oil can flavor food. Do not confuse culinary infused oil with concentrated essential oil products.",
-    category: "Nutrition",
-    tags: ["oregano", "olive-oil", "food"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1600326145552-327f74b9c189?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 60,
-    commentsCount: 7,
-    savesCount: 26,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-29",
-    title: "Lemongrass Tea",
-    content:
-      "Lemongrass makes a citrusy herbal tea. Use food-grade herbs and consult a professional if pregnant, nursing, or taking medications.",
-    category: "Herbal Tea",
-    tags: ["lemongrass", "tea", "citrus"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 86,
-    commentsCount: 13,
-    savesCount: 35,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-30",
-    title: "Cilantro Lime Rice Bowl",
-    content:
-      "Cilantro and lime can brighten rice bowls with beans and vegetables. Simple, food-based wellness idea.",
-    category: "Nutrition",
-    tags: ["cilantro", "lime", "rice-bowl"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 101,
-    commentsCount: 22,
-    savesCount: 48,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-31",
-    title: "Mullein Tea Safety Conversation",
-    content:
-      "Mullein tea appears in herbal communities, but product quality and personal health conditions matter. Ask a licensed professional.",
-    category: "Safety Warnings",
-    tags: ["mullein", "tea", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 74,
-    commentsCount: 11,
-    savesCount: 29,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-32",
-    title: "Coconut Oat Body Scrub Discussion",
-    content:
-      "Oats and coconut oil are used in DIY body care. Avoid slippery shower floors, patch test, and avoid if acne-prone or irritated.",
-    category: "Skin Care",
-    tags: ["oats", "coconut-oil", "body-care"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Skin Garden",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 69,
-    commentsCount: 14,
-    savesCount: 31,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-33",
-    title: "Parsley Mint Tabouli",
-    content:
-      "A fresh tabouli-style salad with parsley, mint, lemon, tomato, cucumber, and grains. Adjust for gluten sensitivity if needed.",
-    category: "Nutrition",
-    tags: ["parsley", "mint", "tabouli"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 89,
-    commentsCount: 10,
-    savesCount: 42,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-34",
-    title: "Valerian Root Tea Warning",
-    content:
-      "Valerian is often discussed for sleep, but it can cause drowsiness and interact with alcohol, sedatives, or medications. Consult a professional.",
-    category: "Safety Warnings",
-    tags: ["valerian", "sleep", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Rajesh Kumar",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto:
-      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=120&q=80",
-    likesCount: 110,
-    commentsCount: 21,
-    savesCount: 50,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-35",
-    title: "Tulsi Holy Basil Tea",
-    content:
-      "Tulsi tea is used in many wellness traditions. Ask a professional before regular use, especially with pregnancy, medication, or health conditions.",
-    category: "Herbal Tea",
-    tags: ["tulsi", "holy-basil", "tea"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Rajesh Kumar",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto:
-      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=120&q=80",
-    likesCount: 97,
-    commentsCount: 18,
-    savesCount: 44,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-36",
-    title: "Herbal Bath Soak With Lavender",
-    content:
-      "A relaxing bath idea with dried lavender and oatmeal in a tied muslin bag. Avoid if fragrance or botanicals irritate your skin.",
-    category: "Stress Relief",
-    tags: ["lavender", "bath", "oatmeal"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Maya Wellness",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 83,
-    commentsCount: 12,
-    savesCount: 32,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-37",
-    title: "Cardamom Cinnamon Tea",
-    content:
-      "Cardamom and cinnamon can make a warm spiced tea. Keep portions food-like and ask a professional before using herbs therapeutically.",
-    category: "Herbal Tea",
-    tags: ["cardamom", "cinnamon", "tea"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 72,
-    commentsCount: 8,
-    savesCount: 27,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-38",
-    title: "Plantain Leaf Salve Discussion",
-    content:
-      "Plantain leaf is discussed in folk herbalism. Proper identification matters. Do not use on serious wounds or infections without medical care.",
-    category: "Safety Warnings",
-    tags: ["plantain-leaf", "salve", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 65,
-    commentsCount: 9,
-    savesCount: 24,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-39",
-    title: "Blueberry Mint Smoothie",
-    content:
-      "Blend blueberries, mint, yogurt or plant milk, and ice for a refreshing smoothie. Adjust for allergies and dietary needs.",
-    category: "Nutrition",
-    tags: ["blueberry", "mint", "smoothie"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 118,
-    commentsCount: 20,
-    savesCount: 57,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-40",
-    title: "Marshmallow Root Tea Education",
-    content:
-      "Marshmallow root tea is discussed for soothing routines, but it may affect medication absorption. Ask a professional about timing and safety.",
-    category: "Gut Health",
-    tags: ["marshmallow-root", "tea", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Anya Patel",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80",
-    likesCount: 76,
-    commentsCount: 15,
-    savesCount: 33,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-41",
-    title: "Rosemary Roasted Potatoes",
-    content:
-      "Roast potatoes with rosemary, olive oil, garlic, and black pepper. A simple culinary herb recipe for the community.",
-    category: "Nutrition",
-    tags: ["rosemary", "potatoes", "food"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 93,
-    commentsCount: 13,
-    savesCount: 41,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-42",
-    title: "Moringa Powder Smoothie Note",
-    content:
-      "Moringa powder is popular, but supplements can interact with medications or health conditions. Use caution and get professional guidance.",
-    category: "Safety Warnings",
-    tags: ["moringa", "supplements", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1514995669114-6081e934b693?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 84,
-    commentsCount: 16,
-    savesCount: 38,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-43",
-    title: "Chamomile Lavender Sleep Sachet",
-    content:
-      "A sachet with dried chamomile and lavender can be used for gentle scent near your bedside. Avoid if fragrance bothers you.",
-    category: "Sleep",
-    tags: ["chamomile", "lavender", "sleep"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Maya Wellness",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 67,
-    commentsCount: 8,
-    savesCount: 22,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-44",
-    title: "Pineapple Ginger Mint Juice",
-    content:
-      "Pineapple, ginger, mint, and water can make a bright juice. Keep ginger moderate and consider medication interactions.",
-    category: "Nutrition",
-    tags: ["pineapple", "ginger", "mint"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 121,
-    commentsCount: 24,
-    savesCount: 60,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-45",
-    title: "Licorice Root Tea Safety Warning",
-    content:
-      "Licorice root can affect blood pressure and interact with medications. This is a high-caution herb and should be discussed with a professional.",
-    category: "Safety Warnings",
-    tags: ["licorice-root", "blood-pressure", "safety"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Anya Patel",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80",
-    likesCount: 140,
-    commentsCount: 34,
-    savesCount: 72,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-46",
-    title: "Mint Chocolate Chia Pudding",
-    content:
-      "Chia seeds, cocoa, milk or plant milk, and chopped mint make a dessert-style snack. Hydrate chia seeds fully before eating.",
-    category: "Nutrition",
-    tags: ["mint", "chia", "dessert"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 99,
-    commentsCount: 17,
-    savesCount: 45,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-47",
-    title: "Rooibos Vanilla Evening Tea",
-    content:
-      "Rooibos with vanilla and cinnamon can be a caffeine-free evening drink. Check ingredients if you have allergies.",
-    category: "Sleep",
-    tags: ["rooibos", "vanilla", "evening-tea"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Tea Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 78,
-    commentsCount: 9,
-    savesCount: 30,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-48",
-    title: "Spearmint Tea Discussion",
-    content:
-      "Spearmint tea is enjoyed by many. Hormone-related claims should be treated carefully and discussed with a licensed professional.",
-    category: "Safety Warnings",
-    tags: ["spearmint", "tea", "claims"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1582365547476-361f7f45602a?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Safety Desk",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto: "",
-    likesCount: 87,
-    commentsCount: 19,
-    savesCount: 39,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-49",
-    title: "Fresh Herb Omelet",
-    content:
-      "Eggs with parsley, chives, basil, and black pepper make a simple herb-forward breakfast. Adjust for dietary restrictions.",
-    category: "Nutrition",
-    tags: ["parsley", "chives", "breakfast"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 64,
-    commentsCount: 7,
-    savesCount: 24,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-50",
-    title: "Herbal Vinegar With Rosemary and Thyme",
-    content:
-      "Infuse vinegar with rosemary and thyme for salad dressings. Use clean jars, food-safe methods, and refrigerate if needed.",
-    category: "Nutrition",
-    tags: ["vinegar", "rosemary", "thyme"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1615484478243-c94e896edbae?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Garden Circle",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 73,
-    commentsCount: 10,
-    savesCount: 35,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-51",
-    title: "Citrus Balm Mocktail",
-    content:
-      "Lemon balm, orange slices, sparkling water, and ice make a simple herbal mocktail. Keep it as a refreshing drink, not a treatment.",
-    category: "General Wellness",
-    tags: ["lemon-balm", "mocktail", "citrus"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1527761939622-933cbe01c021?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Fresh Living",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 58,
-    commentsCount: 5,
-    savesCount: 21,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-52",
-    title: "Ashwagandha Supplement Caution",
-    content:
-      "Ashwagandha is a supplement, not a casual food herb. It may interact with conditions or medications. Ask a licensed professional before use.",
-    category: "Safety Warnings",
-    tags: ["ashwagandha", "supplements", "caution"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Dr. Rajesh Kumar",
-    authorRole: "expert",
-    authorVerified: true,
-    authorPhoto:
-      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=120&q=80",
-    likesCount: 136,
-    commentsCount: 32,
-    savesCount: 68,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-53",
-    title: "Beet Ginger Salad",
-    content:
-      "Cooked beets, ginger, lemon, olive oil, and parsley create a bright salad. Keep ginger moderate and food-based.",
-    category: "Nutrition",
-    tags: ["beet", "ginger", "salad"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Natural Table",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 76,
-    commentsCount: 11,
-    savesCount: 34,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "demo-54",
-    title: "Mint Rosemary Foot Soak Discussion",
-    content:
-      "Warm water with mint or rosemary scent can feel relaxing. Avoid very hot water, wounds, or skin irritation concerns.",
-    category: "Stress Relief",
-    tags: ["mint", "rosemary", "foot-soak"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
-    authorName: "Maya Wellness",
-    authorRole: "member",
-    authorVerified: false,
-    authorPhoto: "",
-    likesCount: 61,
-    commentsCount: 9,
-    savesCount: 27,
-    createdAt: new Date().toISOString(),
+      "https://ui-avatars.com/api/?name=Safety+Desk&background=f8d7da&color=28513f",
   },
 ];
+
+const imageKeywords = [
+  "herbal-tea",
+  "mint-tea",
+  "ginger-tea",
+  "chamomile-tea",
+  "lavender-herbs",
+  "fresh-herbs",
+  "organic-herbs",
+  "natural-remedy",
+  "tea-cup",
+  "wellness-tea",
+  "rosemary-herb",
+  "turmeric-drink",
+  "aloe-vera",
+  "green-smoothie",
+  "healthy-food",
+  "garden-herbs",
+  "lemongrass-tea",
+  "hibiscus-tea",
+  "cinnamon-tea",
+  "herbal-garden",
+];
+
+const recipeTemplates = [
+  {
+    title: "Chamomile & Lemon Balm Nighttime Tea",
+    category: "Sleep",
+    tags: ["chamomile", "lemon-balm", "sleep", "tea"],
+    content:
+      "A gentle evening tea idea with chamomile and lemon balm. Community knowledge only — not medical advice. Avoid if allergic to related plants.",
+  },
+  {
+    title: "Fresh Ginger Lemon Comfort Tea",
+    category: "Immunity",
+    tags: ["ginger", "lemon", "tea", "comfort"],
+    content:
+      "Fresh ginger slices with lemon in warm water. Ginger may interact with blood thinners or surgery plans, so ask a professional first.",
+  },
+  {
+    title: "Aloe Vera Skin Patch-Test Routine",
+    category: "Skin Care",
+    tags: ["aloe", "skin", "patch-test"],
+    content:
+      "Aloe is commonly used topically. Always patch test first and stop if irritation appears. Not for serious burns, wounds, or skin disease.",
+  },
+  {
+    title: "Turmeric Golden Milk",
+    category: "General Wellness",
+    tags: ["turmeric", "golden-milk", "cinnamon"],
+    content:
+      "Warm milk or plant milk with turmeric, cinnamon, and a pinch of black pepper. Turmeric can interact with medications.",
+  },
+  {
+    title: "Peppermint After-Meal Tea",
+    category: "Gut Health",
+    tags: ["peppermint", "digestion", "tea"],
+    content:
+      "Peppermint tea is a popular after-meal drink. People with reflux may not tolerate peppermint well.",
+  },
+  {
+    title: "Rosemary Lemon Infused Water",
+    category: "Nutrition",
+    tags: ["rosemary", "lemon", "infused-water"],
+    content:
+      "A refreshing infused water with rosemary and lemon slices. Keep it as a wellness drink, not a medical treatment.",
+  },
+  {
+    title: "Lavender Calm Sachet",
+    category: "Stress Relief",
+    tags: ["lavender", "aroma", "calm"],
+    content:
+      "Dried lavender in a cloth sachet can add a calming scent to a drawer or pillow area. Avoid if fragrance triggers allergies.",
+  },
+  {
+    title: "Cucumber Mint Hydration Jar",
+    category: "Nutrition",
+    tags: ["cucumber", "mint", "hydration"],
+    content:
+      "Add cucumber slices and mint leaves to cold water for a fresh drink. Wash herbs well and refrigerate safely.",
+  },
+  {
+    title: "Honey Lemon Thyme Tea",
+    category: "Herbal Tea",
+    tags: ["thyme", "honey", "lemon", "tea"],
+    content:
+      "Steep thyme, add lemon, and sweeten lightly with honey. Do not give honey to children under 1 year old.",
+  },
+  {
+    title: "Hibiscus Iced Tea",
+    category: "Herbal Tea",
+    tags: ["hibiscus", "iced-tea", "summer"],
+    content:
+      "Hibiscus makes a bright tart tea. It may not be suitable for everyone, including some people on blood pressure medication.",
+  },
+  {
+    title: "Fennel Seed Tea",
+    category: "Gut Health",
+    tags: ["fennel", "tea", "gut-health"],
+    content:
+      "Crushed fennel seeds can be steeped as an aromatic after-meal tea. Ask a professional first if pregnant, nursing, or taking medication.",
+  },
+  {
+    title: "Oatmeal Honey Face Mask",
+    category: "Skin Care",
+    tags: ["oatmeal", "honey", "face-mask"],
+    content:
+      "Ground oats and honey are often used in gentle DIY skin routines. Patch test and avoid if you have allergy concerns.",
+  },
+  {
+    title: "Basil Pesto Garden Bowl",
+    category: "Nutrition",
+    tags: ["basil", "pesto", "nutrition"],
+    content:
+      "Fresh basil, olive oil, garlic, nuts, and greens can make a bright garden bowl. Check allergies before using nuts.",
+  },
+  {
+    title: "Nettle Tea Education",
+    category: "Safety Warnings",
+    tags: ["nettle", "safety", "tea"],
+    content:
+      "Nettle tea is discussed in many wellness communities. It can interact with medications and is not appropriate for everyone.",
+  },
+  {
+    title: "Cinnamon Apple Herbal Simmer",
+    category: "General Wellness",
+    tags: ["cinnamon", "apple", "aroma"],
+    content:
+      "Simmer apple slices, cinnamon, and orange peel for a cozy kitchen aroma. Do not ingest essential oils.",
+  },
+  {
+    title: "Lemon Balm Sun Tea",
+    category: "Herbal Tea",
+    tags: ["lemon-balm", "tea", "food-safety"],
+    content:
+      "Lemon balm tea can be refreshing. Prepare and store safely to avoid bacterial growth, especially with sun tea methods.",
+  },
+  {
+    title: "Parsley Lemon Salad Topper",
+    category: "Nutrition",
+    tags: ["parsley", "lemon", "salad"],
+    content:
+      "Chopped parsley, lemon, olive oil, and a pinch of salt can brighten salads. Keep it food-focused and safe.",
+  },
+  {
+    title: "Calendula Oil Discussion",
+    category: "Skin Care",
+    tags: ["calendula", "skin", "oil"],
+    content:
+      "Calendula-infused oil is popular for topical routines. Patch test, avoid open wounds, and ask a professional for skin conditions.",
+  },
+  {
+    title: "Sage and Honey Tea Safety Note",
+    category: "Safety Warnings",
+    tags: ["sage", "tea", "safety"],
+    content:
+      "Sage tea is aromatic, but sage is not suitable for everyone and should not be overused.",
+  },
+  {
+    title: "Mint Lime Cooling Drink",
+    category: "General Wellness",
+    tags: ["mint", "lime", "drink"],
+    content:
+      "Muddle mint with lime and sparkling water for a fresh alcohol-free drink. Great for community recipe sharing.",
+  },
+  {
+    title: "Rose Hip Tea",
+    category: "Herbal Tea",
+    tags: ["rosehip", "tea", "vitamin-c"],
+    content:
+      "Rose hips are often used for tart herbal tea. Check medication interactions and allergies before adding any herb regularly.",
+  },
+  {
+    title: "Garlic Herb Soup Base",
+    category: "Nutrition",
+    tags: ["garlic", "soup", "thyme"],
+    content:
+      "Garlic, onion, parsley, thyme, and vegetable broth can make a comforting soup base. This is a food recipe, not medical advice.",
+  },
+  {
+    title: "Eucalyptus Steam Safety Reminder",
+    category: "Safety Warnings",
+    tags: ["eucalyptus", "steam", "safety"],
+    content:
+      "Some people use aromatic steam, but eucalyptus oil can be unsafe if misused and should not be swallowed.",
+  },
+  {
+    title: "Dandelion Leaf Salad",
+    category: "Nutrition",
+    tags: ["dandelion", "greens", "salad"],
+    content:
+      "Young dandelion greens can be used in salads when correctly identified and safely sourced. Avoid chemically treated areas.",
+  },
+  {
+    title: "Raspberry Leaf Tea Education",
+    category: "Safety Warnings",
+    tags: ["raspberry-leaf", "women-wellness", "safety"],
+    content:
+      "Raspberry leaf tea is often discussed in women’s wellness spaces. It is not appropriate for everyone.",
+  },
+  {
+    title: "Oregano Olive Oil Food Use",
+    category: "Nutrition",
+    tags: ["oregano", "olive-oil", "food"],
+    content:
+      "Fresh oregano in olive oil can flavor food. Do not confuse culinary infused oil with concentrated essential oil products.",
+  },
+  {
+    title: "Lemongrass Tea",
+    category: "Herbal Tea",
+    tags: ["lemongrass", "tea", "citrus"],
+    content:
+      "Lemongrass makes a citrusy herbal tea. Use food-grade herbs and consult a professional if pregnant, nursing, or taking medications.",
+  },
+  {
+    title: "Cilantro Lime Rice Bowl",
+    category: "Nutrition",
+    tags: ["cilantro", "lime", "rice-bowl"],
+    content:
+      "Cilantro and lime can brighten rice bowls with beans and vegetables. Simple, food-based wellness idea.",
+  },
+  {
+    title: "Mullein Tea Safety Conversation",
+    category: "Safety Warnings",
+    tags: ["mullein", "tea", "safety"],
+    content:
+      "Mullein tea appears in herbal communities, but product quality and personal health conditions matter.",
+  },
+  {
+    title: "Coconut Oat Body Scrub",
+    category: "Skin Care",
+    tags: ["oats", "coconut-oil", "body-care"],
+    content:
+      "Oats and coconut oil are used in DIY body care. Avoid slippery shower floors, patch test, and avoid irritated skin.",
+  },
+  {
+    title: "Parsley Mint Tabouli",
+    category: "Nutrition",
+    tags: ["parsley", "mint", "tabouli"],
+    content:
+      "A fresh tabouli-style salad with parsley, mint, lemon, tomato, cucumber, and grains. Adjust for gluten sensitivity.",
+  },
+  {
+    title: "Valerian Root Tea Warning",
+    category: "Safety Warnings",
+    tags: ["valerian", "sleep", "safety"],
+    content:
+      "Valerian is often discussed for sleep, but it can cause drowsiness and interact with alcohol, sedatives, or medications.",
+  },
+  {
+    title: "Tulsi Holy Basil Tea",
+    category: "Herbal Tea",
+    tags: ["tulsi", "holy-basil", "tea"],
+    content:
+      "Tulsi tea is used in many wellness traditions. Ask a professional before regular use with pregnancy, medication, or conditions.",
+  },
+  {
+    title: "Herbal Bath Soak With Lavender",
+    category: "Stress Relief",
+    tags: ["lavender", "bath", "oatmeal"],
+    content:
+      "A relaxing bath idea with dried lavender and oatmeal in a tied muslin bag. Avoid if fragrance or botanicals irritate your skin.",
+  },
+  {
+    title: "Cardamom Cinnamon Tea",
+    category: "Herbal Tea",
+    tags: ["cardamom", "cinnamon", "tea"],
+    content:
+      "Cardamom and cinnamon can make a warm spiced tea. Keep portions food-like and ask before using herbs therapeutically.",
+  },
+  {
+    title: "Plantain Leaf Salve Discussion",
+    category: "Safety Warnings",
+    tags: ["plantain-leaf", "salve", "safety"],
+    content:
+      "Plantain leaf is discussed in folk herbalism. Proper identification matters. Do not use on serious wounds or infections.",
+  },
+  {
+    title: "Blueberry Mint Smoothie",
+    category: "Nutrition",
+    tags: ["blueberry", "mint", "smoothie"],
+    content:
+      "Blend blueberries, mint, yogurt or plant milk, and ice for a refreshing smoothie. Adjust for allergies and dietary needs.",
+  },
+  {
+    title: "Marshmallow Root Tea Education",
+    category: "Gut Health",
+    tags: ["marshmallow-root", "tea", "safety"],
+    content:
+      "Marshmallow root tea is discussed for soothing routines, but it may affect medication absorption.",
+  },
+  {
+    title: "Rosemary Roasted Potatoes",
+    category: "Nutrition",
+    tags: ["rosemary", "potatoes", "food"],
+    content:
+      "Roast potatoes with rosemary, olive oil, garlic, and black pepper. A simple culinary herb recipe for the community.",
+  },
+  {
+    title: "Moringa Powder Smoothie Note",
+    category: "Safety Warnings",
+    tags: ["moringa", "supplements", "safety"],
+    content:
+      "Moringa powder is popular, but supplements can interact with medications or health conditions.",
+  },
+];
+
+const variations = [
+  "Beginner",
+  "Simple",
+  "Family",
+  "Garden",
+  "Fresh",
+];
+
+function makeImageUrl(index) {
+  const keyword = imageKeywords[index % imageKeywords.length];
+  return `https://source.unsplash.com/1200x800/?${keyword},organic,natural,herbs&sig=${index}`;
+}
+
+function makePost(index) {
+  const template = recipeTemplates[index % recipeTemplates.length];
+  const author = authors[index % authors.length];
+  const variation = variations[Math.floor(index / recipeTemplates.length) % variations.length];
+  const number = index + 1;
+
+  return {
+    id: `recipe-${number}`,
+    title: `${variation} ${template.title}`,
+    content: `${template.content} Community knowledge only — not medical advice. Always consult a licensed healthcare professional before using herbs, supplements, or natural remedies.`,
+    category: template.category,
+    tags: [...template.tags, "natural", "herbacircle"],
+    imageUrl: makeImageUrl(index),
+    authorName: author.authorName,
+    authorRole: author.authorRole,
+    authorVerified: author.authorVerified,
+    authorPhoto: author.authorPhoto,
+    likesCount: 20 + ((index * 7) % 180),
+    commentsCount: 2 + ((index * 3) % 45),
+    savesCount: 5 + ((index * 5) % 90),
+    reportsCount: 0,
+    hidden: false,
+    createdAt: new Date(Date.now() - index * 3600000).toISOString(),
+  };
+}
+
+export const demoPosts = Array.from({ length: 200 }, (_, index) =>
+  makePost(index)
+);
 
 export const demoRecipes = demoPosts;
