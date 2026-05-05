@@ -78,7 +78,16 @@ export default function TranslateButton() {
         className="inline-flex items-center gap-2 rounded-full bg-mint px-4 py-2 text-sm font-bold text-forest shadow-soft transition hover:bg-cream"
         title="Translate site"
       >
-        <Languages size={17} />
+        {translated ? (
+          <Languages size={17} />
+        ) : (
+          <img
+            src="/brazil.png"
+            alt="Brazilian flag"
+            className="h-5 w-5 rounded-full object-cover"
+          />
+        )}
+
         <span className="hidden sm:inline">
           {translated ? "English" : "Português"}
         </span>
